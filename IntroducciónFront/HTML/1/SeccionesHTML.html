@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de una Página Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .webpage {
+            border: 3px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .html-tag {
+            border: 2px solid #e44d26;
+            background: linear-gradient(to bottom, #fff5f5 0%, #ffe5e5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+        }
+
+        .tag-label {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 18px;
+            color: #e44d26;
+            margin-bottom: 8px;
+        }
+
+        .head {
+            background: linear-gradient(to bottom, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .head:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .body-tag {
+            border: 2px solid #666;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #e8eaf6 0%, #c5cae9 100%);
+            border: 2px solid #673ab7;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(103, 58, 183, 0.3);
+        }
+
+        .nav {
+            background: linear-gradient(to bottom, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 10px;
+            margin: 10px;
+        }
+
+        .main {
+            flex: 2;
+            background: linear-gradient(to bottom, #f1f8e9 0%, #dcedc8 100%);
+            border: 2px solid #8bc34a;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .aside {
+            flex: 1;
+            background: linear-gradient(to bottom, #fff9c4 0%, #fff59d 100%);
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .aside:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .section {
+            background: linear-gradient(to bottom, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #9c27b0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+        }
+
+        .article {
+            background: linear-gradient(to bottom, #fce4ec 0%, #f8bbd0 100%);
+            border: 2px solid #e91e63;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .footer {
+            background: linear-gradient(to bottom, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #009688;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .footer:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 150, 136, 0.3);
+        }
+
+        .info-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border: 3px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .info-panel.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .info-panel h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .info-panel p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .info-panel .tag-name {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #e44d26;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .info-panel {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 20px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Estructura de una Página Web HTML</h1>
+        
+        <div class="webpage">
+            <div class="html-tag" data-info="html">
+                <div class="tag-label">&lt;html&gt;</div>
+                
+                <div class="head" data-info="head">
+                    <div class="tag-label">&lt;head&gt;</div>
+                    <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                        &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;script&gt;
+                    </div>
+                </div>
+
+                <div class="body-tag">
+                    <div class="tag-label">&lt;body&gt;</div>
+
+                    <div class="header" data-info="header">
+                        <div class="tag-label">&lt;header&gt;</div>
+                        <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                            Logo, título principal, barra de navegación
+                        </div>
+                    </div>
+
+                    <div class="nav" data-info="nav">
+                        <div class="tag-label">&lt;nav&gt;</div>
+                        <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                            Menú de navegación
+                        </div>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="main" data-info="main">
+                            <div class="tag-label">&lt;main&gt;</div>
+                            
+                            <div class="section" data-info="section">
+                                <div class="tag-label">&lt;section&gt;</div>
+                                
+                                <div class="article" data-info="article">
+                                    <div class="tag-label">&lt;article&gt;</div>
+                                    <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                                        &lt;h2&gt;, &lt;p&gt;, &lt;img&gt;
+                                    </div>
+                                </div>
+
+                                <div class="article" data-info="article">
+                                    <div class="tag-label">&lt;article&gt;</div>
+                                    <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                                        &lt;h2&gt;, &lt;p&gt;, &lt;img&gt;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aside" data-info="aside">
+                            <div class="tag-label">&lt;aside&gt;</div>
+                            <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                                Contenido lateral, widgets
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer" data-info="footer">
+                        <div class="tag-label">&lt;footer&gt;</div>
+                        <div style="margin-left: 20px; font-size: 14px; color: #666;">
+                            Copyright, enlaces, información de contacto
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <h3 id="infoTitle">Título</h3>
+            <p id="infoDescription">Descripción</p>
+        </div>
+    </div>
+
+    <script>
+        const infoData = {
+            html: {
+                title: '<html>',
+                description: 'Es el elemento raíz que contiene toda la página web. Todo el contenido de tu sitio debe estar dentro de esta etiqueta. Es el contenedor principal de la estructura HTML.'
+            },
+            head: {
+                title: '<head>',
+                description: 'Contiene metadatos sobre la página que no son visibles para los usuarios, como el título de la página (<title>), enlaces a hojas de estilo CSS (<link>), metaetiquetas (<meta>) para SEO, y scripts (<script>). Esta información es procesada por el navegador y motores de búsqueda.'
+            },
+            header: {
+                title: '<header>',
+                description: 'Representa el encabezado de la página o de una sección. Generalmente contiene el logo, el título principal del sitio, y la navegación principal. Es lo primero que ven los usuarios al entrar a tu página.'
+            },
+            nav: {
+                title: '<nav>',
+                description: 'Define un bloque de navegación con enlaces a otras páginas o secciones del sitio. Típicamente contiene menús, barras de navegación o índices. Ayuda a los usuarios a moverse por tu sitio web.'
+            },
+            main: {
+                title: '<main>',
+                description: 'Contiene el contenido principal y único de la página. Solo debe haber un elemento <main> por página y debe contener el contenido central, excluyendo elementos que se repiten como barras laterales, navegación o pies de página.'
+            },
+            section: {
+                title: '<section>',
+                description: 'Agrupa contenido relacionado temáticamente. Cada <section> normalmente incluye un encabezado (<h2>, <h3>, etc.) y representa una sección independiente del documento. Por ejemplo: "Servicios", "Productos", "Testimonios".'
+            },
+            article: {
+                title: '<article>',
+                description: 'Representa contenido independiente y autónomo que podría distribuirse por separado, como una publicación de blog, un artículo de noticias, un comentario de usuario, o una tarjeta de producto. Debe tener sentido por sí mismo.'
+            },
+            aside: {
+                title: '<aside>',
+                description: 'Contiene contenido relacionado pero secundario al contenido principal, como barras laterales, anuncios, enlaces relacionados, biografías del autor, o widgets. Es complementario pero no esencial para entender el contenido principal.'
+            },
+            footer: {
+                title: '<footer>',
+                description: 'Representa el pie de página de la página o de una sección. Generalmente contiene información de copyright, enlaces a políticas de privacidad, redes sociales, información de contacto, y mapas del sitio. Es lo último que ven los usuarios.'
+            }
+        };
+
+        const infoPanel = document.getElementById('infoPanel');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoDescription = document.getElementById('infoDescription');
+
+        document.querySelectorAll('[data-info]').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                const infoKey = this.getAttribute('data-info');
+                const info = infoData[infoKey];
+                
+                if (info) {
+                    infoTitle.textContent = info.title;
+                    infoDescription.textContent = info.description;
+                    infoPanel.classList.add('active');
+                }
+            });
+
+            el.addEventListener('mouseleave', function() {
+                infoPanel.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

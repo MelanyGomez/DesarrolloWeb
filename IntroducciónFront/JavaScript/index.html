@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Frontend - Demo Interactiva</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 JavaScript Frontend - Demo Interactiva</h1>
+            <p>Explora todo lo que puedes hacer con JavaScript del lado del cliente</p>
+        </header>
+
+        <div class="demo-grid">
+            <!-- 1. Contador -->
+            <div class="demo-card">
+                <h2>📊 Contador Interactivo</h2>
+                <p>Manipulación del DOM y eventos</p>
+                <div class="counter-display" id="counter">0</div>
+                <div class="button-group">
+                    <button onclick="decrementCounter()">➖ Decrementar</button>
+                    <button onclick="resetCounter()">🔄 Reiniciar</button>
+                    <button onclick="incrementCounter()">➕ Incrementar</button>
+                </div>
+            </div>
+
+            <!-- 2. Calculadora -->
+            <div class="demo-card">
+                <h2>🧮 Calculadora</h2>
+                <p>Operaciones matemáticas en tiempo real</p>
+                <div class="calculator">
+                    <div class="calc-display" id="calcDisplay">0</div>
+                    <div class="calc-buttons">
+                        <button class="calc-btn" onclick="appendToCalc('7')">7</button>
+                        <button class="calc-btn" onclick="appendToCalc('8')">8</button>
+                        <button class="calc-btn" onclick="appendToCalc('9')">9</button>
+                        <button class="calc-btn operator" onclick="appendToCalc('÷')">÷</button>
+                        <button class="calc-btn" onclick="appendToCalc('4')">4</button>
+                        <button class="calc-btn" onclick="appendToCalc('5')">5</button>
+                        <button class="calc-btn" onclick="appendToCalc('6')">6</button>
+                        <button class="calc-btn operator" onclick="appendToCalc('×')">×</button>
+                        <button class="calc-btn" onclick="appendToCalc('1')">1</button>
+                        <button class="calc-btn" onclick="appendToCalc('2')">2</button>
+                        <button class="calc-btn" onclick="appendToCalc('3')">3</button>
+                        <button class="calc-btn operator" onclick="appendToCalc('-')">-</button>
+                        <button class="calc-btn" onclick="appendToCalc('0')">0</button>
+                        <button class="calc-btn" onclick="clearCalc()">C</button>
+                        <button class="calc-btn operator" onclick="appendToCalc('+')">+</button>
+                        <button class="calc-btn equals" onclick="calculateResult()">=</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Cambio de Tema -->
+            <div class="demo-card">
+                <h2>🌓 Cambio de Tema</h2>
+                <p>Toggle entre modo claro y oscuro</p>
+                <div class="theme-demo light" id="themeDemo">
+                    <h3>Este es el contenido del tema</h3>
+                    <p>El tema actual es: <strong id="currentTheme">Claro</strong></p>
+                </div>
+                <div class="button-group" style="margin-top: 15px;">
+                    <button onclick="toggleTheme()">🔄 Cambiar Tema</button>
+                </div>
+            </div>
+
+            <!-- 4. Lista de Tareas -->
+            <div class="demo-card">
+                <h2>✅ Lista de Tareas</h2>
+                <p>CRUD operations y localStorage</p>
+                <div class="todo-input-group">
+                    <input type="text" id="todoInput" placeholder="Nueva tarea...">
+                    <button onclick="addTodo()">➕ Agregar</button>
+                </div>
+                <ul class="todo-list" id="todoList"></ul>
+            </div>
+
+            <!-- 5. Reloj Digital -->
+            <div class="demo-card">
+                <h2>🕐 Reloj en Tiempo Real</h2>
+                <p>setInterval y Date API</p>
+                <div class="clock-display" id="clock">00:00:00</div>
+                <div class="date-display" id="date">Cargando...</div>
+            </div>
+
+            <!-- 6. Generador de Colores -->
+            <div class="demo-card">
+                <h2>🎨 Generador de Colores</h2>
+                <p>Números aleatorios y estilos dinámicos</p>
+                <div class="color-box" id="colorBox">#3498db</div>
+                <div class="button-group">
+                    <button onclick="generateRandomColor()">🎲 Color Aleatorio</button>
+                </div>
+            </div>
+
+            <!-- 7. Validador de Formulario -->
+            <div class="demo-card">
+                <h2>📝 Validación de Formulario</h2>
+                <p>Validación en tiempo real</p>
+                <form onsubmit="return validateForm(event)">
+                    <div class="form-group">
+                        <label for="userName">Nombre (mín. 3 caracteres):</label>
+                        <input type="text" id="userName" oninput="validateName()">
+                        <div class="error-message" id="nameError">El nombre debe tener al menos 3 caracteres</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" oninput="validateEmail()">
+                        <div class="error-message" id="emailError">Ingresa un email válido</div>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <!-- 8. Carrusel de Imágenes -->
+            <div class="demo-card">
+                <h2>🖼️ Carrusel Automático</h2>
+                <p>Transiciones y control de slides</p>
+                <div class="carousel">
+                    <div class="carousel-item active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Slide 1</div>
+                    <div class="carousel-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Slide 2</div>
+                    <div class="carousel-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Slide 3</div>
+                    <div class="carousel-controls">
+                        <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+                        <div class="carousel-dot" onclick="goToSlide(1)"></div>
+                        <div class="carousel-dot" onclick="goToSlide(2)"></div>
+                    </div>
+                </div>
+                <div class="button-group" style="margin-top: 15px;">
+                    <button onclick="prevSlide()">⬅️ Anterior</button>
+                    <button onclick="toggleAutoplay()" id="autoplayBtn">⏸️ Pausar</button>
+                    <button onclick="nextSlide()">➡️ Siguiente</button>
+                </div>
+            </div>
+
+            <!-- 9. Buscador en Tiempo Real -->
+            <div class="demo-card">
+                <h2>🔍 Buscador Dinámico</h2>
+                <p>Filtrado de contenido en tiempo real</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar..." oninput="filterItems()">
+                </div>
+                <ul class="items-list" id="itemsList">
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>TypeScript</li>
+                    <li>Ruby</li>
+                    <li>PHP</li>
+                    <li>Swift</li>
+                    <li>Go</li>
+                </ul>
+            </div>
+
+            <!-- 10. Modal/Popup -->
+            <div class="demo-card">
+                <h2>💬 Modal Interactivo</h2>
+                <p>Ventanas emergentes personalizadas</p>
+                <div class="button-group">
+                    <button onclick="openModal()">🚀 Abrir Modal</button>
+                </div>
+            </div>
+
+            <!-- 11. Temporizador -->
+            <div class="demo-card">
+                <h2>⏱️ Temporizador</h2>
+                <p>Cuenta regresiva interactiva</p>
+                <div class="timer-display" id="timer">00:30</div>
+                <div class="timer-controls">
+                    <button onclick="startTimer()">▶️ Iniciar</button>
+                    <button onclick="pauseTimer()">⏸️ Pausar</button>
+                    <button onclick="resetTimer()">🔄 Reiniciar</button>
+                </div>
+            </div>
+
+            <!-- 12. Acordeón -->
+            <div class="demo-card">
+                <h2>📋 Acordeón</h2>
+                <p>Paneles expandibles</p>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(0)">
+                        ¿Qué es JavaScript? <span id="icon0">+</span>
+                    </div>
+                    <div class="accordion-content" id="content0">
+                        JavaScript es un lenguaje de programación interpretado que se ejecuta en el navegador del cliente.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(1)">
+                        ¿Para qué sirve? <span id="icon1">+</span>
+                    </div>
+                    <div class="accordion-content" id="content1">
+                        JavaScript permite crear páginas web interactivas, manipular el DOM, hacer peticiones HTTP, y mucho más.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(2)">
+                        ¿Es difícil de aprender? <span id="icon2">+</span>
+                    </div>
+                    <div class="accordion-content" id="content2">
+                        JavaScript es relativamente fácil de aprender para principiantes, aunque tiene conceptos avanzados complejos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+            <h3>🎉 ¡Modal Exitoso!</h3>
+            <p>Este es un modal creado con JavaScript puro. Los modals son útiles para mostrar información importante, formularios, o confirmaciones.</p>
+            <button onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

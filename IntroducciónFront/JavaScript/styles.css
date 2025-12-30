@@ -1,0 +1,470 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.demo-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.demo-card:hover {
+    transform: translateY(-5px);
+}
+
+.demo-card h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #2a5298;
+    padding-bottom: 10px;
+}
+
+.demo-card p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Contador */
+.counter-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #2a5298;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Calculadora */
+.calculator {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.calc-display {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: right;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    min-height: 60px;
+    word-wrap: break-word;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-btn {
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.calc-btn.operator {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.calc-btn.equals {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    grid-column: span 2;
+}
+
+/* Cambio de tema */
+.theme-demo {
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.theme-demo.light {
+    background: #ffffff;
+    color: #333;
+}
+
+.theme-demo.dark {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+/* Lista de tareas */
+.todo-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.todo-input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.todo-input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    background: #e9ecef;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.todo-item button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* Reloj */
+.clock-display {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2a5298;
+    font-family: 'Courier New', monospace;
+    margin: 20px 0;
+}
+
+.date-display {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Generador de colores */
+.color-box {
+    height: 150px;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+/* Validador de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group input.error {
+    border-color: #e74c3c;
+}
+
+.form-group input.success {
+    border-color: #27ae60;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    height: 250px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* Buscador */
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.items-list {
+    list-style: none;
+}
+
+.items-list li {
+    padding: 12px;
+    background: #f8f9fa;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.items-list li:hover {
+    background: #e9ecef;
+}
+
+.items-list li.hidden {
+    display: none;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+/* Temporizador */
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2a5298;
+    font-family: 'Courier New', monospace;
+    margin: 20px 0;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Acordeón */
+.accordion-item {
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #e9ecef;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.accordion-content.show {
+    max-height: 200px;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+}

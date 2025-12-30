@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio web demostrativo con todos los elementos HTML">
+    <meta name="keywords" content="HTML, CSS, desarrollo web, tutorial">
+    <meta name="author" content="Tu Nombre">
+    <title>Mi Sitio Web Completo | Aprende HTML</title>
+    <link rel="stylesheet" href="styles.css">   
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Ejemplo sitio web</h1>
+        <p>Todos los elementos HTML en acción</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#multimedia">Multimedia</a></li>
+            <li><a href="#tutoriales">Tutoriales</a></li>
+            <li><a href="#articulos">Artículos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div>
+            <!-- Section: Inicio -->
+            <section id="inicio">
+                <h2>Bienvenido a Mi Sitio Web</h2>
+                <p>Este sitio web es una demostración completa de todos los <strong>elementos HTML</strong> que puedes utilizar para crear páginas web increíbles. Aquí encontrarás ejemplos de imágenes, videos, listas, enlaces, tablas, formularios y mucho más.</p>
+                
+                <blockquote>
+                    "El diseño no es solo cómo se ve o cómo se siente. El diseño es cómo funciona."
+                    <footer>— Steve Jobs</footer>
+                </blockquote>
+
+                <p>HTML (HyperText Markup Language) es el lenguaje de marcado estándar para crear páginas web. Trabaja junto con <code>CSS</code> para el diseño y <code>JavaScript</code> para la interactividad.</p>
+
+                <a href="#multimedia" class="btn">Explorar Multimedia →</a>
+            </section>
+
+            <!-- Section: Sobre Mí -->
+            <section id="sobre-mi">
+                <h2>Sobre Mí</h2>
+                
+                <figure class="image-container">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop" alt="Programador trabajando en su computadora" width="800" height="500">
+                    <figcaption>Desarrollador web apasionado por crear experiencias digitales</figcaption>
+                </figure>
+
+                <p>Soy un desarrollador web con experiencia en crear sitios modernos y funcionales. Me especializo en HTML, CSS y JavaScript, y me encanta compartir conocimientos con la comunidad.</p>
+
+                <div class="content-list">
+                    <h3>Mis Habilidades</h3>
+                    <ul>
+                        <li><strong>HTML5:</strong> Estructura semántica y accesible</li>
+                        <li><strong>CSS3:</strong> Diseños responsivos y animaciones</li>
+                        <li><strong>JavaScript:</strong> Interactividad y funcionalidad</li>
+                        <li><strong>Git:</strong> Control de versiones</li>
+                        <li><strong>Responsive Design:</strong> Sitios que funcionan en todos los dispositivos</li>
+                    </ul>
+                </div>
+
+                <h3>Tecnologías que domino</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tecnología</th>
+                            <th>Nivel</th>
+                            <th>Años de Experiencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML/CSS</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>5 años</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>4 años</td>
+                        </tr>
+                        <tr>
+                            <td>React</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>3 años</td>
+                        </tr>
+                        <tr>
+                            <td>Node.js</td>
+                            <td>⭐⭐⭐</td>
+                            <td>2 años</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section: Multimedia -->
+            <section id="multimedia">
+                <h2>Galería Multimedia</h2>
+                <p>El contenido multimedia hace que tu sitio web sea más atractivo e interactivo.</p>
+
+                <h3>Imágenes</h3>
+                <p>Las imágenes son fundamentales para comunicar visualmente. Siempre incluye el atributo <code>alt</code> para accesibilidad.</p>
+                
+                <figure class="image-container">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop" alt="Código de programación en pantalla" width="800" height="500">
+                    <figcaption>El código es poesía para las computadoras</figcaption>
+                </figure>
+
+                <h3>Videos</h3>
+                <p>Los videos pueden incrustarse usando la etiqueta <code>&lt;iframe&gt;</code>. Aquí tienes un tutorial de ejemplo:</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Tutorial de HTML"></iframe>
+                </div>
+            </section>
+
+            <!-- Section: Tutoriales -->
+            <section id="tutoriales">
+                <h2>Tutoriales de Desarrollo Web</h2>
+                
+                <h3>Primeros Pasos con HTML</h3>
+                <p>HTML es el lenguaje fundamental de la web. Aquí te muestro cómo crear tu primera página:</p>
+
+                <div class="content-list">
+                    <h4>Pasos para crear una página HTML:</h4>
+                    <ol>
+                        <li>Abre tu editor de código favorito (VS Code, Sublime Text, etc.)</li>
+                        <li>Crea un nuevo archivo con extensión <code>.html</code></li>
+                        <li>Escribe la estructura básica del documento</li>
+                        <li>Añade contenido dentro del <code>&lt;body&gt;</code></li>
+                        <li>Guarda el archivo y ábrelo en tu navegador</li>
+                    </ol>
+                </div>
+
+                <h3>Ejemplo de Código HTML</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>Recursos Útiles</h3>
+                <p>Aquí hay algunos enlaces a recursos externos que te ayudarán en tu aprendizaje:</p>
+                <div class="content-list">
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a> <span class="badge">Oficial</span></li>
+                        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+                        <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> <span class="badge">Popular</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Articles -->
+            <article id="articulos">
+                <time datetime="2024-12-27">27 de Diciembre, 2024</time>
+                <h3>Artículo: La Importancia de la Semántica en HTML</h3>
+                <p>El HTML semántico utiliza etiquetas que describen claramente su significado tanto para el navegador como para el desarrollador. Usar elementos como <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, y <code>&lt;aside&gt;</code> hace que tu código sea más accesible y fácil de mantener.</p>
+                
+                <figure class="image-container">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop" alt="Estructura de código HTML" width="800" height="400">
+                    <figcaption>Código limpio y semántico</figcaption>
+                </figure>
+
+                <p>Los beneficios del HTML semántico incluyen mejor SEO, mayor accesibilidad para lectores de pantalla, y código más mantenible para otros desarrolladores.</p>
+                
+                <a href="#" class="btn">Leer más</a>
+            </article>
+
+            <article>
+                <time datetime="2024-12-20">20 de Diciembre, 2024</time>
+                <h3>Artículo: CSS Grid vs Flexbox</h3>
+                <p>Tanto CSS Grid como Flexbox son herramientas poderosas para crear layouts, pero cada una tiene sus casos de uso ideales. Grid es bidimensional y perfecto para layouts complejos, mientras que Flexbox es unidimensional y excelente para alinear elementos en una sola dirección.</p>
+                <a href="#" class="btn">Leer más</a>
+            </article>
+
+            <!-- Contact Section -->
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <p>¿Tienes alguna pregunta o quieres trabajar juntos? ¡Envíame un mensaje!</p>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Aside - Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3>📌 Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Página Principal</a></li>
+                    <li><a href="#sobre-mi">Acerca de</a></li>
+                    <li><a href="#multimedia">Galería</a></li>
+                    <li><a href="#tutoriales">Aprende HTML</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>📚 Categorías</h3>
+                <ul>
+                    <li><a href="#">Desarrollo Web (15)</a></li>
+                    <li><a href="#">CSS Avanzado (8)</a></li>
+                    <li><a href="#">JavaScript (12)</a></li>
+                    <li><a href="#">Diseño Responsivo (6)</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>🔥 Artículos Populares</h3>
+                <ul>
+                    <li><a href="#">Guía completa de Flexbox</a></li>
+                    <li><a href="#">CSS Grid en 10 minutos</a></li>
+                    <li><a href="#">JavaScript ES6+</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>💡 Consejo del Día</h3>
+                <p>Siempre valida tu HTML usando el <a href="https://validator.w3.org/" target="_blank">W3C Validator</a> para asegurar que tu código siga los estándares.</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre el Sitio</h4>
+                <p>Este sitio web es una demostración educativa de todos los elementos HTML y CSS que puedes usar para crear páginas web modernas y atractivas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#tutoriales">Tutoriales</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+                    <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a></li>
+                    <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Sígueme</h4>
+                <ul>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mi Sitio Web Completo. Todos los derechos reservados. | Hecho con ❤️ y HTML/CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

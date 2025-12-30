@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contáctanos</h1>
+        <p class="subtitle">Completa el formulario y te responderemos pronto</p>
+        
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nombre completo *</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error" id="nameError">Por favor ingresa tu nombre</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError">Por favor ingresa un correo válido</span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone">
+                <span class="error" id="phoneError">Por favor ingresa un teléfono válido</span>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Asunto *</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="soporte">Soporte técnico</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <span class="error" id="subjectError">Por favor selecciona un asunto</span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje *</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error" id="messageError">Por favor ingresa tu mensaje</span>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Acepto los términos y condiciones *</label>
+                </div>
+                <span class="error" id="termsError">Debes aceptar los términos</span>
+            </div>
+
+            <button type="submit" id="submitBtn">Enviar mensaje</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            ¡Mensaje enviado correctamente! Te responderemos pronto.
+        </div>
+    </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>
