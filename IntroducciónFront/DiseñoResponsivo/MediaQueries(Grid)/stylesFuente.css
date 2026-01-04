@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* Celulares */
+@media (max-width: 600px) {
+  body {
+    font-size: 10px;
+    background-color: rgb(158, 158, 223);
+    font-family: "Dancing Script", cursive;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+    background-color: aquamarine;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1025px) {
+  body {
+    font-size: 30px;
+    background-color: lightpink;
+  }
+}

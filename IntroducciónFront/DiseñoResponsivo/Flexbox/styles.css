@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1d2e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;  /* Quita el subrayado */
+    display: block;         /* Hace que el enlace ocupe todo el espacio */
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* FLEXBOX PRINCIPAL: Contenedor de toda la galería */
+.gallery-container {
+    /* display: flex activa flexbox en este elemento */
+    display: flex;
+    
+    /* flex-wrap: wrap permite que los elementos pasen a la siguiente línea 
+        cuando no hay espacio suficiente en la línea actual */
+    flex-wrap: wrap;
+    
+    /* gap crea espacios entre los elementos flex (hijos directos) */
+    gap: 20px;
+    
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de eventos */
+.event-card {
+    /* flex: 1 1 300px es la forma abreviada de:
+        - flex-grow: 1 (puede crecer para llenar espacio disponible)
+        - flex-shrink: 1 (puede encogerse si es necesario)
+        - flex-basis: 300px (tamaño base antes de crecer/encoger) */
+    flex: 1 1 300px;
+    
+    min-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Imágenes de fondo */
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+.event-card:hover::before {
+    filter: brightness(0.9);
+}
+
+.event-card.rock-rio::before {
+    background-image: url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80');
+}
+
+.event-card.falconmasters::before {
+    background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80');
+}
+
+.event-card.coachella::before {
+    background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80');
+}
+
+.event-card.us-festival::before {
+    background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80');
+}
+
+.event-card.altamont::before {
+    background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80');
+}
+
+.event-card.rio-again::before {
+    background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&q=80');
+}
+
+/* FLEXBOX EN CONTENIDO: Posiciona texto dentro de cada tarjeta */
+.event-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: white;
+    height: 100%;
+    
+    /* Activamos flexbox para organizar título y fecha verticalmente */
+    display: flex;
+    
+    /* flex-direction: column apila los elementos verticalmente 
+        (por defecto flexbox los coloca horizontalmente con 'row') */
+    flex-direction: column;
+    
+    /* justify-content controla la distribución en el eje principal (vertical aquí)
+        space-between pone el primer elemento arriba y el último abajo */
+    justify-content: space-between;
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.event-date {
+    font-size: 14px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Tarjeta especial de Rock Legends (más grande) */
+.legends-card {
+    /* flex: 1 1 400px hace que esta tarjeta sea más grande que las otras */
+    flex: 1 1 400px;
+    
+    background: linear-gradient(135deg, #c0392b 0%, #7b241c 100%);
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.legends-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+
+/* FLEXBOX EN CONTENIDO DE LEGENDS: Organiza contenido verticalmente */
+.legends-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    
+    /* Flexbox para apilar título, lista de bandas y botón */
+    display: flex;
+    flex-direction: column;
+    
+    /* justify-content: space-between distribuye el espacio sobrante
+        entre los elementos (título arriba, botón abajo, lista en medio) */
+    justify-content: space-between;
+    
+    height: 100%;
+}
+
+.legends-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.band-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.band-list li {
+    padding: 8px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.band-list li:last-child {
+    border-bottom: none;
+}
+
+.buy-button {
+    background: #f1c40f;
+    color: #1a1d2e;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.buy-button:hover {
+    background: #f39c12;
+}
+
+/* Responsive: ajusta el tamaño base de las tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .event-card {
+        /* En móviles, las tarjetas ocupan todo el ancho disponible */
+        flex: 1 1 100%;
+    }
+
+    .legends-card {
+        flex: 1 1 100%;
+    }
+
+    /* FLEXBOX RESPONSIVE: Cambia la dirección de la tarjeta de leyendas en móvil */
+    .legends-content {
+        /* En móvil, mantenemos flex-direction: column 
+            (ya está definido arriba, esto es solo para claridad) */
+        flex-direction: column;
+    }
+}
+

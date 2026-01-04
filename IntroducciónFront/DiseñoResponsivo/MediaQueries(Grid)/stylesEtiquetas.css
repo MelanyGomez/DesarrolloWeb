@@ -1,0 +1,25 @@
+/* Estilos para etiquetas HTML */
+header {
+    background-color: #e1d426;
+    border-radius: 5%;
+}
+nav {
+    background-color: #eb6a08;
+    border-radius: 5%;
+}
+section {
+    background-color: #34a703;
+    border-radius: 5%;
+}
+article {
+    background-color: #0068ad;
+    border-radius: 5%;
+}
+aside {
+    background-color: #7803ab;
+    border-radius: 5%;
+}
+footer {
+    background-color: #b40276;
+    border-radius: 5%;
+}

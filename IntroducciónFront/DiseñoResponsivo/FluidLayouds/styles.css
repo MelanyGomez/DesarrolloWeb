@@ -1,0 +1,30 @@
+.html{
+    /* Establecer un tamaño de fuente base para facilitar el uso de unidades relativas */
+    font-size: 10px;
+}
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+}
+.box2 {
+    width: 50%;
+    height: 90%;
+    background-color: lightgreen;
+}
+.box3 {
+    width: 80vw;
+    height: 30vh;
+    background-color: rgb(238, 144, 230);
+}
+.box4 {
+    width: 20em;
+    height: 10em;
+    background-color: rgb(222, 238, 144);
+}
+.box5 {
+    width: 50rem;
+    height: 10rem;
+    background-color: rgb(160, 144, 238);
+}   
+   
